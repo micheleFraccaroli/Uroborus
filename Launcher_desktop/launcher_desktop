@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Name=Uroborus
+Comment=Software for ciclical voltametrics data analysis
+Exec=python3 uroborus.py
+Path=/home/michele/Scrivania/_Uroborus_/
+Icon=/home/michele/Scrivania/_Uroborus_/icon/Uroboro_icon_app.png
+Terminal=true
+Type=Application
+Categories=Utility;Development;
