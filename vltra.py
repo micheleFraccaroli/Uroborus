@@ -43,13 +43,20 @@ def column_creation(row, column_x, column_y, res):
     res.writerow((da_1, da_2))
 
 def file_import(file):
-    #file = input("\nInserisci il nome del file con estensione .pss: ")
     f = open(file, "r")
-    fread_f = f.read()
-    fread_l = fread_f.count(('\n'))
+    u = 0
+    while u < 2:
+        fread_f = f.readline()
+        if fread_f[0].isalpha():
+            u = u + 1
+        else:
+            f.seek(0)
+            u = u + 1
+    fread_f_tot = f.read()
+    fread_l = fread_f_tot.count(('\n'))
 
     f1 = open("file.dat/dati.dat", "w")
-    f1.write(fread_f)
+    f1.write(fread_f_tot)
     f1.close()
     w = open("file.dat/dati.dat", "r")
     r = open("file.dat/dati.csv", "w")
@@ -75,17 +82,25 @@ def file_import(file):
 
 def file_import_sub(file, i):
     f = open(file, "r")
-    fread_f = f.read()
-    fread_l = fread_f.count(('\n'))
+    u = 0
+    while u < 2:
+        fread_f = f.readline()
+        if fread_f[0].isalpha():
+            u = u + 1
+        else:
+            f.seek(0)
+            u = u + 1
+    fread_f_tot = f.read()
+    fread_l = fread_f_tot.count(('\n'))
     if i == '1':
         f1 = open("file.dat/dati_A.dat", "w")
-        f1.write(fread_f)
+        f1.write(fread_f_tot)
         f1.close()
         w = open("file.dat/dati_A.dat", "r")
         r = open("file.dat/dati_A.csv", "w")
     else:
         f1 = open("file.dat/dati_A2.dat", "w")
-        f1.write(fread_f)
+        f1.write(fread_f_tot)
         f1.close()
         w = open("file.dat/dati_A2.dat", "r")
         r = open("file.dat/dati_A2.csv", "w")
