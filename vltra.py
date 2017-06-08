@@ -1,5 +1,5 @@
 #-----------------------------------------------------------------------------
-#                                   Uroborus
+#                                    Vltra
 #
 #                           Designed and developed by:
 #                               Michele Fraccaroli
@@ -123,7 +123,7 @@ def switch():
 # -------------------------------------------
 
 
-print("\n --------------------- WELCOME TO UROBORUS ---------------------\n")
+print("\n --------------------- WELCOME TO VLTRA ---------------------\n")
 op = switch()
 column_x = []
 column_y = []
@@ -131,7 +131,7 @@ file = []
 
 while 1:
     if op == 'q' or op == 'Q':
-        print("\nUroborus termined!\n")
+        print("\nVltra termined!\n")
         break
 # Plotting total graph -----------------------------------------------
     elif op == '1':

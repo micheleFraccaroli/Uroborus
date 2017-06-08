@@ -1,10 +1,10 @@
 [Desktop Entry]
 Version=1.0
-Name=Uroborus
+Name=Vltra
 Comment=software designed and developed for plotting columns of data into a graph
-Exec=python3 uroborus.py
-Path=/home/.../.../__Insert Uroborus's folder__/
-Icon=/home/.../.../__Insert Uroborus's folder__/icon/Uroboro_icon_app.png
+Exec=python3 vltra.py
+Path=/home/.../.../__Insert Vltra's folder__/
+Icon=/home/.../.../__Insert Vltra's folder__/icon/Uroboro_icon_app.png
 Terminal=true
 Type=Application
 Categories=Utility;Development;
