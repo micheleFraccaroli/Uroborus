@@ -1,7 +1,7 @@
 Vltra.1
 
-Vltra is a software designed and developed for plotting columns of data into a graph, make a subraction from graph eand plotting different graph in one.
-
+Vltra is software designed and developed for plotting graph, make a subraction from graph and plotting different graph in one from data of amperometry and cyclic voltammetry.
+It's used in chemical field and this software is completely developed in python.
 
 
 Linux installation
