@@ -1,8 +1,7 @@
 Vltra.1
 
-Vltra is software designed and developed for plotting graph, make a subraction from graph and plotting different graph in one from data of amperometry and cyclic voltammetry.
-It's used in chemical field and this software is completely developed in python.
-
+Vltra is a software that I’ve designed and developed for use in chemical field for plotting and data analysis for data of amperometry and cyclic voltammetry.
+This software is completely developed in python and it is under GPL licence.
 
 Linux installation
 
