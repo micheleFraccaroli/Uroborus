@@ -19,8 +19,8 @@
 #-----------------------------------------------------------------------------
 
 
-# import sys
 # import string
+# import sys
 import fileinput
 import csv
 import matplotlib.pyplot as plt
@@ -118,14 +118,6 @@ def file_import_sub(file, i):
             except ValueError:
                 row = w1.split(" ")
                 column_creation(row, column_x_1, column_y_1, res)
-            '''
-            row = w1.split("\t")
-            da_1a = point_calc((row[0]))
-            column_x_1.append((da_1a))
-            da_2a = point_calc((row[1].strip('\n')))
-            column_y_1.append((da_2a))
-            res.writerow((da_1a, da_2a))
-            '''
     finally:
         f.close()
         r.close()
@@ -164,8 +156,9 @@ while 1:
                 yname = input("Inserisci il nome dell'asse y: ")
 
                 plt.suptitle(title, fontsize=12, fontweight='bold')
-                plt.xlabel(xname)
-                plt.ylabel(yname)
+                plt.xlabel(xname, fontsize=20)
+                plt.ylabel(yname, fontsize=20)
+                plt.tick_params(labelsize=16)
                 plt.show()
             else:
                 op = switch()
@@ -266,7 +259,10 @@ while 1:
         data2 = input('Inserisci il secondo file: ')
         data1_path = ("Input_file/s3/" + data1)
         data2_path = ("Input_file/s3/" + data2)
-        legend = input("Inserisci legenda: ")
+        leg_check = input("Vuoi la legenda?(Y,n): ")
+
+        if leg_check == 'Y' or leg_check == 'y':
+            legend = input("Inserisci legenda: ")
         try:
             if data1 != 'q' or data2 != 'q':
                 while(data1 != 'ok' or data2 != 'ok'):
@@ -276,7 +272,10 @@ while 1:
                     for i in range(len(column_y_1)):
                         column_ris.append(float(column_y_1[i]) - float(column_y_2[i]))
 
-                    trace_ris.append(plt.plot(column_x_1, column_ris, label=legend))
+                    if leg_check == 'Y' or leg_check == 'y':
+                        trace_ris.append(plt.plot(column_x_1, column_ris, label=legend))
+                    else:
+                        trace_ris.append(plt.plot(column_x_1, column_ris))
                     column_ris.clear()
                     data1 = input("Inserisci il primo file('ok' per eseguire): ")
                     data2 = input("Inserisci il secondo file('ok' per eseguire): ")
@@ -287,8 +286,9 @@ while 1:
                     else:
                         legend = input("Inserisci legenda: ")
 
-                let = plt.legend()
-                let.draggable()
+                if leg_check == 'Y' or leg_check == 'y':
+                    let = plt.legend()
+                    let.draggable()
                 title = input("Inserisci il titolo del grafico: ")
                 xname = input("Inserisci il nome dell'asse x: ")
                 yname = input("Inserisci il nome dell'asse y: ")
@@ -311,7 +311,10 @@ while 1:
 
         files = input("Inserisci file ('ok' per eseguire, 'q' per terminare): ")
         files_path = ("Input_file/s4/" + files)
-        legend = input("Inserisci legenda: ")
+        leg_check = input("Vuoi la legenda?(Y,n): ")
+
+        if leg_check == 'Y' or leg_check == 'y':
+            legend = input("Inserisci legenda: ")
 
         if files == 'q' or files == 'Q':
             op = switch()
@@ -319,22 +322,27 @@ while 1:
             try:
                 while (files != 'ok'):
                     (column_x, column_y) = file_import(files_path)
-                    trace.append(plt.plot(column_x, column_y, label=legend))
+                    if leg_check == 'Y' or leg_check == 'y':
+                        trace.append(plt.plot(column_x, column_y, label=legend))
+                    else:
+                        trace.append(plt.plot(column_x, column_y))
                     i = i + 1
                     files = input("Inserisci file ('ok' per eseguire, 'q' per terminare): ")
                     files_path = ("Input_file/s4/" + files)
-                    if files != 'ok':
+                    if files != 'ok' and leg_check == 'Y' or leg_check == 'y':
                         legend = input("Inserisci legenda: ")
-
+                
+                if leg_check == 'Y' or leg_check == 'y':
+                    let = plt.legend()
+                    let.draggable()
                 title = input("Inserisci il titolo del grafico: ")
                 xname = input("Inserisci il nome dell'asse x: ")
                 yname = input("Inserisci il nome dell'asse y: ")
 
-                let = plt.legend()
-                let.draggable()
                 plt.suptitle(title, fontsize=12, fontweight='bold')
                 plt.xlabel(xname)
                 plt.ylabel(yname)
+                plt.tick_params(labelsize=30)
                 
                 plt.show()
             except IOError:
