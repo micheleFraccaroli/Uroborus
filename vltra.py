@@ -42,8 +42,11 @@ class bcolors:
     FAIL = '\033[91m'
     ENDC = '\033[0m'
 
-os.system('cls')
-os.system('clear')
+if(os.name == 'nt'):
+    os.system('cls')
+else:
+    os.system('clear')
+    
 print(bcolors.MAGENTA + "____   ____.__   __                 " + bcolors.ENDC)
 print(bcolors.MAGENTA + "\   \ /   /|  |_/  |_____________   " + bcolors.ENDC)
 print(bcolors.OKBLUE +  " \   Y   / |  |\   __\_  __ \__  \  " + bcolors.ENDC)
